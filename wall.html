@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>בועז דבוש - אפקט בטון</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Heebo:wght@300;400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* כללי */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #F5F5DC;
+      /* Beige */
+      font-family: 'Heebo', sans-serif;
+      color: #2F4F4F;
+      /* Slate Grey */
+      padding-top: 70px;
+      /* הוספתי רווח כדי שהדף לא יגלול לתוך ה-header */
+    }
+
+    /* תפריט - למעלה */
+    .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background: #333333;
+      /* Charcoal Grey */
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 0 20px;
+      transition: 0.3s;
+      z-index: 999;
+    }
+
+    .menu-content {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+    }
+
+    .menu-content li {
+      border-radius: 0px 50px 50px 0;
+      transition: 0.3s;
+    }
+
+    .menu-content li:hover {
+      background: #2E4053;
+      /* Dutch Blue */
+    }
+
+    .menu-content a {
+      text-decoration: none;
+      color: #FFFFFF;
+      /* White */
+      display: flex;
+      align-items: center;
+      font-family: 'calibri';
+      padding: 10px;
+    }
+
+    .material-symbols-outlined {
+      font-size: 25px;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: #2E4053;
+      /* Dutch Blue */
+      padding: 10px;
+    }
+
+    /* header */
+    header {
+      background: url('./קיר-כח.jpeg') center/cover no-repeat;
+      background-size: cover;
+      color: #FFFFFF;
+      /* White */
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 60px;
+      border-radius: 12px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 8rem;
+      /* הגדלתי את הגודל של הכותרת פי 2 */
+      z-index: 3;
+    }
+
+    /* תכנים נוספים */
+    section {
+      margin: 120px auto;
+      padding: 120px 40px;
+      background-color: #F5F5DC;
+      /* Beige */
+      border-radius: 15px;
+      box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 1000px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-in-out forwards;
+    }
+
+    section h2 {
+      color: #333333;
+      /* Charcoal Grey */
+      margin-bottom: 20px;
+    }
+
+    section p {
+      color: #2F4F4F;
+      /* Slate Grey */
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    .image-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .image-container img {
+      width: 30%;
+      border-radius: 15px;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .image-container img:hover {
+      transform: scale(1.1);
+    }
+
+    input,
+    textarea,
+    button {
+      width: 100%;
+      margin-bottom: 45px;
+      padding: 15px;
+      box-sizing: border-box;
+      border-radius: 8px;
+      border: 1px solid #bbb;
+      transition: border-color 0.3s ease-in-out;
+      background-color: #FFFFFF;
+      /* White */
+      color: #2E4053;
+      /* Dutch Blue */
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: #2E4053;
+      /* Dutch Blue */
+      outline: none;
+    }
+
+    button {
+      background-color: #2E4053;
+      /* Dutch Blue */
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1F2A35;
+      /* Darker Dutch Blue */
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 120px;
+      padding: 45px;
+      background-color: #333333;
+      /* Charcoal Grey */
+      color: #FFFFFF;
+      /* White */
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    section:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    section:nth-child(4) {
+      animation-delay: 0.9s;
+    }
+
+    section:nth-child(5) {
+      animation-delay: 1.2s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- תפריט - למעלה -->
+  <div class="menu">
+    <ul class="menu-content">
+      <li><a href="#"><span class="material-symbols-outlined">אפקט בטון</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">טיח</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">ערבה</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">סטוקו</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">שליכט צבעוני</span></a></li>
+      <li><a href="#"><span class="material-symbols-outlined">חיפוי קירות</span></a></li>
+    </ul>
+  </div>
+
+  <!-- header -->
+  <header>
+    <div class="header-overlay">
+      <h1>בועז דבוש</h1>
+      <p>בנייה איכותית עם אפקטים ייחודיים</p>
+    </div>
+  </header>
+
+  <!-- פרטי העבודה -->
+  <section class="details">
+    <h2>פרטי העבודה</h2>
+    <p>העבודה כוללת יצירת אפקטים מיוחדים על קירות פנים וחוץ בעבודת יד מדויקת ומקצועית. אנו משתמשים בחומרים האיכותיים
+      ביותר ליצירת מראה מודרני ומרשים.</p>
+  </section>
+
+  <!-- תהליך העבודה -->
+  <section class="process">
+    <h2>תהליך העבודה</h2>
+    <p>תהליך העבודה מתחיל בתכנון מדויק של העיצוב והאפקט הרצוי, ולאחר מכן אנו מבצעים את העבודה בשיטה מדויקת ומקצועית.
+      הזמן משתנה בהתאם לפרויקט, אבל בדרך כלל כל עבודה לוקחת בין מספר ימים לשבועיים.</p>
+  </section>
+
+  <!-- גלריה -->
+  <section class="gallery">
+    <h2>גלריה</h2>
+    <div class="image-container">
+      <img src="קיר כח.jpeg" alt="קיר באפקט בטון">
+      <img src="קיר כח.jpeg" alt="קיר כח בעיצוב מודרני">
+      <img src="קיר כח.jpeg" alt="אפקט בטון בסלון יוקרתי">
+    </div>
+  </section>
+
+  <!-- פירוט -->
+  <section class="description">
+    <h2>פירוט נוסף</h2>
+    <p>באמצעות טכניקות מתקדמות והבנה מעמיקה של התחום, אנו מצליחים להפיק אפקטים שמוסיפים עיצוב ייחודי ואומנותי לכל חדר.
+      כל פרויקט מתבצע תוך הקפדה על פרטים קטנים, שמבטיחים עבודה איכותית שמחזיקה לאורך זמן.</p>
+  </section>
+
+  <!-- המלצות -->
+  <section class="testimonials">
+    <h2>המלצות מלקוחות</h2>
+    <p>"בועז דבוש הפך את הבית שלי ליצירת אמנות אמיתית. העבודה המקצועית והאיכות הבלתי מתפשרת מדברות בעד עצמן." - רון מ.
+    </p>
+    <p>"אפקט הבטון שהוא עשה לי בסלון פשוט מדהים! תודה בועז!" - יעל ש.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 כל הזכויות שמורות</p>
+  </footer
