@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Search</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-search-overlay">
+  <header>
+    <label class="visually-hidden" for="search-input">Search BuyForce</label>
+    <input id="search-input" class="bf-search__input" type="search" placeholder="Search groups, brands, categories" autofocus />
+  </header>
+
+  <section aria-label="Trending searches">
+    <h2>Trending</h2>
+    <div class="bf-search__chips">
+      <span class="bf-chip">Air fryers</span>
+      <span class="bf-chip">Gaming chairs</span>
+      <span class="bf-chip">Robot vacuums</span>
+    </div>
+  </section>
+
+  <section aria-label="Results" class="bf-product-grid">
+    <article class="bf-card">
+      <div class="bf-card__media">
+        <img src="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=600&q=60" alt="Air fryer" />
+      </div>
+      <p class="bf-card__title">Airy Crisp Air Fryer XL</p>
+      <div class="bf-progress" data-value="50"><span class="bf-progress__bar"></span></div>
+    </article>
+  </section>
+</body>
+</html>

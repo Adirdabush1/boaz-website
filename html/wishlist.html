@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Wishlist</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-screen">
+  <header class="bf-header bf-header--solid">
+    <span class="bf-header__logo">Wishlist</span>
+  </header>
+
+  <main>
+    <section class="bf-wishlist__grid" aria-label="Saved products">
+      <article class="bf-card">
+        <div class="bf-card__media">
+          <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=60" alt="Sneakers" />
+        </div>
+        <p class="bf-card__title">Everyday Knit Sneakers</p>
+        <div class="bf-progress" data-value="25"><span class="bf-progress__bar"></span></div>
+      </article>
+    </section>
+
+    <section class="bf-empty-state">
+      <div class="bf-empty-state__icon">
+        <img src="../figma-export/icons/heart-outline.svg" alt="" aria-hidden="true" />
+      </div>
+      <p>Add more items to get notified when groups open.</p>
+      <button class="bf-button bf-button--primary">Browse categories</button>
+    </section>
+  </main>
+
+  <nav class="bf-nav" role="navigation" aria-label="Primary">
+    <button class="bf-nav__item" aria-label="Home">
+      <img src="../figma-export/icons/home.svg" alt="" aria-hidden="true" />
+      <div>Home</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Categories">
+      <img src="../figma-export/icons/categories.svg" alt="" aria-hidden="true" />
+      <div>Categories</div>
+    </button>
+    <button class="bf-nav__item" aria-label="My groups">
+      <img src="../figma-export/icons/groups.svg" alt="" aria-hidden="true" />
+      <div>My Groups</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Notifications">
+      <img src="../figma-export/icons/notifications.svg" alt="" aria-hidden="true" />
+      <div>Alerts</div>
+    </button>
+    <button class="bf-nav__item bf-nav__item--active" aria-current="page" aria-label="Profile">
+      <img src="../figma-export/icons/profile.svg" alt="" aria-hidden="true" />
+      <div>Profile</div>
+    </button>
+  </nav>
+</body>
+</html>

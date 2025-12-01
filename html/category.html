@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Categories</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-screen">
+  <header class="bf-header bf-header--solid">
+    <span class="bf-header__logo">Categories</span>
+    <button class="bf-header__icon-btn" aria-label="Search categories">
+      <img src="../figma-export/icons/search.svg" alt="" aria-hidden="true" />
+    </button>
+  </header>
+
+  <main>
+    <section class="bf-toolbar" aria-label="Category controls">
+      <select class="bf-toolbar__dropdown" aria-label="Sort">
+        <option>Sort: Ending soon</option>
+        <option>Sort: Highest discount</option>
+        <option>Sort: Most joined</option>
+      </select>
+      <button class="bf-toolbar__filter" aria-pressed="false">Filters</button>
+    </section>
+
+    <section class="bf-product-grid" aria-live="polite">
+      <article class="bf-card">
+        <div class="bf-card__media">
+          <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=600&q=60" alt="Desk lamp" />
+        </div>
+        <div>
+          <p class="bf-card__title">Halo Task Lamp</p>
+          <div class="bf-card__price-group">
+            <strong>₪119</strong>
+            <span class="bf-card__price-regular">₪199</span>
+          </div>
+          <div class="bf-progress" data-value="50"><span class="bf-progress__bar"></span></div>
+        </div>
+      </article>
+
+      <article class="bf-card">
+        <div class="bf-skeleton" style="height:200px"></div>
+        <p class="bf-card__title">Loading next drop…</p>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bf-nav" role="navigation" aria-label="Primary">
+    <button class="bf-nav__item" aria-label="Home">
+      <img src="../figma-export/icons/home.svg" alt="" aria-hidden="true" />
+      <div>Home</div>
+    </button>
+    <button class="bf-nav__item bf-nav__item--active" aria-label="Categories" aria-current="page">
+      <img src="../figma-export/icons/categories.svg" alt="" aria-hidden="true" />
+      <div>Categories</div>
+    </button>
+    <button class="bf-nav__item" aria-label="My groups">
+      <img src="../figma-export/icons/groups.svg" alt="" aria-hidden="true" />
+      <div>My Groups</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Notifications">
+      <img src="../figma-export/icons/notifications.svg" alt="" aria-hidden="true" />
+      <div>Alerts <span class="bf-nav__badge">1</span></div>
+    </button>
+    <button class="bf-nav__item" aria-label="Profile">
+      <img src="../figma-export/icons/profile.svg" alt="" aria-hidden="true" />
+      <div>Profile</div>
+    </button>
+  </nav>
+</body>
+</html>

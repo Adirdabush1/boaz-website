@@ -1,0 +1,21 @@
+component_name,variants,props,css_class,used_on
+bf/nav/bottom,default|active|with-badge,"icon, label, badgeCount",.bf-nav / .bf-nav__item / .bf-nav__badge,index-home|category|my-groups|wishlist|notifications
+bf/header/global,transparent|solid,"title, showSearch",.bf-header / .bf-header--solid / .bf-header__icon-btn,all screens
+bf/card/product,default|joined|sold-out|closed,"title, priceRegular, priceGroup, spotsLeft, badges",.bf-card + modifiers,index-home|category|product|wishlist
+bf/progress,0|25|50|75|95|100,"value",.bf-progress[data-value="*"],cards|my-groups|product
+bf/button,primary|secondary|ghost × (default|hover|pressed|disabled|loading),"type, state, icon",.bf-button + modifiers,all screens
+bf/icon/heart,outline|filled|snackbar,"ariaPressed",.bf-icon-heart,product|wishlist
+bf/skeleton/card,default,"height",.bf-skeleton,category|home loading states
+bf/modal/payment,default|loading|success|error,"title, ctaLabel",.bf-modal__backdrop / .bf-modal,payment flow
+bf/modal/confirm,default|danger,"ctaLabel",.bf-modal,my-groups
+bf/modal/error,default,"errorMessage",.bf-modal,error handling
+bf/carousel/hero,slide-1|slide-2|slide-3,"title, subtitle",.bf-carousel / .bf-carousel__item,home
+bf/page/home,base|tablet|desktop,"heroVariant",html/index-home.html
+bf/page/categories,grid|list|skeleton,"sortOption",html/category.html
+bf/page/product,default|joined|sold,"ctaState",html/product.html
+bf/page/my-groups,active|closing|charged|refunded|failed,"selectedTab",html/my-groups.html
+bf/page/wishlist,populated|empty,"wishlistCount",html/wishlist.html
+bf/page/notifications,unread|all-read,"selected",html/notifications.html
+bf/page/search,overlay|results|empty,"queryState",html/search.html
+bf/page/join-success,default,"ctaPrimary, ctaSecondary",html/join-success.html
+bf/page/auth,onboarding|login|register|forgot,"formState",html/auth.html

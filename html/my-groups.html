@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · My Groups</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-screen">
+  <header class="bf-header bf-header--solid">
+    <span class="bf-header__logo">My Groups</span>
+  </header>
+
+  <main>
+    <div class="bf-tabs" role="tablist">
+      <button class="bf-tabs__btn bf-tabs__btn--active" role="tab" aria-selected="true">Active</button>
+      <button class="bf-tabs__btn" role="tab">Closing soon</button>
+      <button class="bf-tabs__btn" role="tab">Charged</button>
+      <button class="bf-tabs__btn" role="tab">Refunded</button>
+      <button class="bf-tabs__btn" role="tab">Failed</button>
+    </div>
+
+    <section class="bf-tab-panel" role="tabpanel">
+      <article class="bf-list-item">
+        <img class="bf-list-item__thumb" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=400&q=60" alt="Sneakers" />
+        <div class="bf-list-item__meta">
+          <strong>Flux Flex Knit Sneakers</strong>
+          <div class="bf-progress bf-progress--near" data-value="95"><span class="bf-progress__bar"></span></div>
+          <div>
+            <span class="bf-status-badge bf-status-badge--active">Active</span>
+            <span class="bf-card__countdown">01:12:11 remaining</span>
+          </div>
+        </div>
+        <button class="bf-button bf-button--ghost" style="width:auto">Cancel</button>
+      </article>
+    </section>
+  </main>
+
+  <nav class="bf-nav" role="navigation" aria-label="Primary">
+    <button class="bf-nav__item" aria-label="Home">
+      <img src="../figma-export/icons/home.svg" alt="" aria-hidden="true" />
+      <div>Home</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Categories">
+      <img src="../figma-export/icons/categories.svg" alt="" aria-hidden="true" />
+      <div>Categories</div>
+    </button>
+    <button class="bf-nav__item bf-nav__item--active" aria-current="page" aria-label="My groups">
+      <img src="../figma-export/icons/groups.svg" alt="" aria-hidden="true" />
+      <div>My Groups</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Notifications">
+      <img src="../figma-export/icons/notifications.svg" alt="" aria-hidden="true" />
+      <div>Alerts</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Profile">
+      <img src="../figma-export/icons/profile.svg" alt="" aria-hidden="true" />
+      <div>Profile</div>
+    </button>
+  </nav>
+</body>
+</html>
