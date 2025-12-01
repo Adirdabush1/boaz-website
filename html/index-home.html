@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Home</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-screen">
+  <header class="bf-header" role="banner">
+    <span class="bf-header__logo">BuyForce</span>
+    <button class="bf-header__icon-btn" aria-label="Search">
+      <img src="../figma-export/icons/search.svg" alt="" aria-hidden="true" />
+    </button>
+  </header>
+
+  <main>
+    <section class="bf-home__banner">
+      <div class="bf-carousel" aria-label="Top deals carousel">
+        <article class="bf-carousel__item">
+          <p class="bf-badge bf-badge--accent">New</p>
+          <h1>Unlock 30% more savings with group boosts</h1>
+          <p>Invite friends and close the gap faster.</p>
+        </article>
+        <article class="bf-carousel__item">
+          <h1>Weekend Flash Drops</h1>
+          <p>Fresh electronics every Friday.</p>
+        </article>
+      </div>
+      <div class="bf-carousel__indicators" aria-hidden="true">
+        <span class="bf-carousel__dot bf-carousel__dot--active"></span>
+        <span class="bf-carousel__dot"></span>
+      </div>
+    </section>
+
+    <section aria-labelledby="near-goal">
+      <div class="bf-section-header">
+        <h2 id="near-goal">Near Goal Groups</h2>
+        <button class="bf-button bf-button--ghost" style="width:auto">See all</button>
+      </div>
+      <div class="bf-horizontal-scroll" role="list">
+        <article class="bf-card bf-card--joined" role="listitem">
+          <div class="bf-card__media">
+            <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=60" alt="Wireless headphones" />
+            <div class="bf-card__badges">
+              <span class="bf-badge bf-badge--success">Joined ✔</span>
+              <span class="bf-badge">2 spots left</span>
+            </div>
+          </div>
+          <div>
+            <p class="bf-card__title">Noir Wireless ANC Headphones with 40h battery</p>
+            <div class="bf-card__price-group">
+              <strong>₪189</strong>
+              <span class="bf-card__price-regular">₪329</span>
+            </div>
+            <div class="bf-progress bf-progress--near" data-value="95">
+              <span class="bf-progress__bar"></span>
+            </div>
+            <p class="bf-card__countdown">05:12:44 left to close</p>
+          </div>
+        </article>
+
+        <article class="bf-card" role="listitem">
+          <div class="bf-card__media">
+            <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=600&q=60" alt="Smart speaker" />
+            <div class="bf-card__badges">
+              <span class="bf-badge bf-badge--accent">-42%</span>
+            </div>
+          </div>
+          <div>
+            <p class="bf-card__title">Pulse Mini Smart Speaker + Ambient light</p>
+            <div class="bf-card__price-group">
+              <strong>₪89</strong>
+              <span class="bf-card__price-regular">₪149</span>
+            </div>
+            <div class="bf-progress" data-value="50">
+              <span class="bf-progress__bar"></span>
+            </div>
+            <p class="bf-card__countdown">18 people viewing</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="recommend">
+      <div class="bf-section-header">
+        <h2 id="recommend">Recommended for You</h2>
+      </div>
+      <div class="bf-product-grid">
+        <article class="bf-card">
+          <div class="bf-card__media">
+            <img src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=600&q=60" alt="Coffee maker" />
+            <div class="bf-card__badges">
+              <span class="bf-badge">Ships in 48h</span>
+            </div>
+          </div>
+          <div>
+            <p class="bf-card__title">Brewista Mini Pour-over Coffee Station</p>
+            <div class="bf-card__price-group">
+              <strong>₪129</strong>
+              <span class="bf-card__price-regular">₪199</span>
+            </div>
+            <div class="bf-progress" data-value="25">
+              <span class="bf-progress__bar"></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="discounts">
+      <div class="bf-section-header">
+        <h2 id="discounts">Top Discounts Today</h2>
+        <button class="bf-button bf-button--ghost" style="width:auto">View all</button>
+      </div>
+      <div class="bf-horizontal-scroll" role="list">
+        <article class="bf-card bf-card--sold" role="listitem">
+          <div class="bf-card__media">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=60" alt="Sneakers" />
+            <div class="bf-card__badges">
+              <span class="bf-badge bf-badge--error">Sold out</span>
+            </div>
+          </div>
+          <p class="bf-card__title">Flux Flex Knit Sneakers</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bf-nav" role="navigation" aria-label="Primary">
+    <button class="bf-nav__item bf-nav__item--active" aria-label="Home" aria-current="page">
+      <img src="../figma-export/icons/home.svg" alt="" aria-hidden="true" />
+      <div>Home</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Categories">
+      <img src="../figma-export/icons/categories.svg" alt="" aria-hidden="true" />
+      <div>Categories</div>
+    </button>
+    <button class="bf-nav__item" aria-label="My groups">
+      <img src="../figma-export/icons/groups.svg" alt="" aria-hidden="true" />
+      <div>My Groups</div>
+    </button>
+    <button class="bf-nav__item" aria-label="Notifications">
+      <img src="../figma-export/icons/notifications.svg" alt="" aria-hidden="true" />
+      <div>Alerts <span class="bf-nav__badge" aria-label="2 unread">2</span></div>
+    </button>
+    <button class="bf-nav__item" aria-label="Profile">
+      <img src="../figma-export/icons/profile.svg" alt="" aria-hidden="true" />
+      <div>Profile</div>
+    </button>
+  </nav>
+
+  <div class="bf-snackbar" role="status" aria-live="polite">Saved to Wishlist</div>
+</body>
+</html>

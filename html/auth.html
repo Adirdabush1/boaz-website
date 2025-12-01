@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Auth</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+  <style>
+    .bf-auth__form {
+      margin-top: var(--bf-spacing-24);
+      display: flex;
+      flex-direction: column;
+      gap: var(--bf-spacing-16);
+    }
+
+    .bf-input {
+      width: 100%;
+      border-radius: var(--bf-radius-16);
+      border: 1px solid var(--bf-gray-200);
+      padding: 14px 16px;
+    }
+  </style>
+</head>
+<body class="bf-screen">
+  <main>
+    <section class="bf-auth__carousel" aria-label="Onboarding">
+      <article class="bf-auth__slide">
+        <h2>Group buying, unlocked</h2>
+        <p>Pool demand and get wholesale prices in minutes.</p>
+      </article>
+      <article class="bf-auth__slide">
+        <h2>Track in real-time</h2>
+        <p>Progress bars show how close each group is.</p>
+      </article>
+      <article class="bf-auth__slide">
+        <h2>Pay only when it hits</h2>
+        <p>₪1 pre-auth, full charge only when the group closes.</p>
+      </article>
+    </section>
+
+    <section class="bf-auth__form" aria-label="Register">
+      <input class="bf-input" type="email" placeholder="Email" />
+      <input class="bf-input" type="password" placeholder="Password" />
+      <button class="bf-button bf-button--primary">Create account</button>
+      <button class="bf-button bf-button--secondary">Continue with Google</button>
+      <button class="bf-button bf-button--secondary">Continue with Apple</button>
+      <button class="bf-button bf-button--ghost">Already have an account?</button>
+    </section>
+  </main>
+</body>
+</html>

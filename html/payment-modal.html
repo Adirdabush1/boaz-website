@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Payment Modal</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    body {
+      background: var(--bf-gray-50);
+      padding: var(--bf-spacing-24);
+      min-height: 100vh;
+    }
+
+    .bf-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--bf-spacing-16);
+    }
+
+    .bf-card-option {
+      border: 1px solid var(--bf-gray-200);
+      border-radius: var(--bf-radius-16);
+      padding: var(--bf-spacing-16);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="bf-modal__backdrop" style="position:relative; background:transparent;">
+    <div class="bf-modal" role="dialog" aria-modal="true" aria-label="Payment">
+      <header class="bf-modal__header">
+        <h3>Join Pulse Mini group</h3>
+        <button class="bf-modal__close" aria-label="Close">
+          <img src="../figma-export/icons/close.svg" alt="" />
+        </button>
+      </header>
+      <div class="bf-card-list">
+        <label class="bf-card-option">
+          <div>
+            <strong>Visa • 4242</strong>
+            <p>Primary · Expires 08/27</p>
+          </div>
+          <input type="radio" name="card" checked />
+        </label>
+        <label class="bf-card-option">
+          <div>
+            <strong>Add new card</strong>
+          </div>
+          <input type="radio" name="card" />
+        </label>
+      </div>
+      <hr style="margin:var(--bf-spacing-24) 0;border:none;border-top:1px solid var(--bf-gray-100)" />
+      <p><strong>Summary:</strong> ₪1 hold now · ₪89 when funded</p>
+      <button class="bf-button bf-button--primary">Confirm &amp; Join</button>
+      <button class="bf-button bf-button--ghost" style="margin-top:var(--bf-spacing-8)">Retry</button>
+    </div>
+  </div>
+</body>
+</html>

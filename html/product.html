@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuyForce · Product</title>
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/pages.css" />
+</head>
+<body class="bf-screen">
+  <header class="bf-header bf-header--solid">
+    <span class="bf-header__logo">Pulse Mini Speaker</span>
+    <button class="bf-icon-heart" aria-pressed="false" aria-label="Save to wishlist">
+      <img src="../figma-export/icons/heart-outline.svg" alt="" aria-hidden="true" />
+    </button>
+  </header>
+
+  <main>
+    <section class="bf-product-hero">
+      <div class="bf-product-hero__carousel">
+        <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=60" alt="Pulse Mini Speaker" />
+      </div>
+    </section>
+
+    <section class="bf-product-pricing">
+      <div>
+        <p class="bf-card__title">Pulse Mini Smart Speaker + Ambient Light</p>
+        <div class="bf-card__price-group">
+          <strong>₪89</strong>
+          <span class="bf-card__price-regular">₪149</span>
+          <span class="bf-badge bf-badge--accent">-40%</span>
+        </div>
+      </div>
+      <div class="bf-countdown" aria-live="polite">03:44:21</div>
+    </section>
+
+    <div class="bf-progress bf-progress--near" data-value="75" aria-label="75 percent funded">
+      <span class="bf-progress__bar"></span>
+    </div>
+    <p class="bf-card__countdown">39 people have already joined · 11 spots left</p>
+
+    <section>
+      <h2>Description</h2>
+      <p>Warm ambient light plus full spectrum audio, tuned for small spaces. Includes 2-year warranty and fast delivery.</p>
+    </section>
+
+    <section>
+      <h2>Delivery</h2>
+      <ul>
+        <li>Ships once the group closes.</li>
+        <li>Free pickup or ₪9 courier.</li>
+      </ul>
+    </section>
+
+    <div class="bf-sticky-cta">
+      <button class="bf-button bf-button--primary">Join for 1₪</button>
+    </div>
+  </main>
+
+  <div class="bf-modal__backdrop" role="dialog" aria-modal="true" aria-label="Payment" style="display:none">
+    <div class="bf-modal bf-modal/payment">
+      <header class="bf-modal__header">
+        <h3>Confirm payment</h3>
+        <button class="bf-modal__close" aria-label="Close modal">
+          <img src="../figma-export/icons/close.svg" alt="" />
+        </button>
+      </header>
+      <p>Select a card to confirm your ₪1 pre-auth.</p>
+      <button class="bf-button bf-button--primary">Confirm &amp; Join</button>
+    </div>
+  </div>
+</body>
+</html>

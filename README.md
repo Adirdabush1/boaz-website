@@ -1,58 +1,62 @@
-# 💼 Boaz Landing Page Website
+# BuyForce MVP · Design System + Code Handoff
 
-This is a modern, responsive landing page website created as part of my practice in front-end web development.
+This repo packages the BuyForce MVP UI kit: design tokens, reusable components, page templates, SVG assets, and guidance for mirroring the system inside Figma.
 
-The project is fully static and built with:
+> **Figma handoff**: Use `FIGMA_SETUP.md` to recreate the same structure inside your Figma file (pages, color/text styles, components, and prototype wiring). Once you paste the provided component descriptions and property tables, share the generated URL as the official deliverable.
 
-- HTML5
-- CSS3
-- JavaScript (optional interactivity)
-- Clean, mobile-friendly layout
+## Repository layout
 
----
-
-## ✨ Features
-
-- Fully responsive layout (desktop, tablet, and mobile)
-- Elegant and modern design
-- Clean code and file structure
-- Great for personal or business landing pages
-
----
-
-## 🌐 Live Preview
-
-You can view the live version of this project here:  
-🔗 [https://adirdabush1.github.io/boaz-website/](https://adirdabush1.github.io/boaz-website/)
-
----
-
-## 🧠 Purpose
-
-This landing page was created as part of my journey to learn and improve as a web developer.  
-The focus was on:
-
-- Building from scratch using HTML & CSS
-- Designing for responsiveness and user experience
-- Practicing deployment using GitHub Pages
-
----
-
-## 📁 Project Structure
-
-- `index.html` – the main structure of the page
-- `style.css` – styling and layout
-- `assets/` – images, icons or fonts (if used)
-- Optional: `script.js` – for interactivity
-
----
-
-## 🚀 Setup (optional)
-
-If you'd like to clone and run locally:
-
-```bash
-git clone https://github.com/Adirdabush1/boaz-website.git
-cd boaz-website
-open index.html
 ```
+css/
+  tokens.css        # Color/typography/spacing/radii/animation vars
+  components.css    # bf/* reusable components + states
+  pages.css         # Page-specific layouts (home, product, etc.)
+figma-export/
+  icons/*.svg       # Editable thin-outline icons used in UI
+html/
+  *.html            # Screen templates (mobile-first)
+build/
+  component-inventory.csv   # Mapping of components → variants → pages
+  buyforce-hand-off.zip     # Packaged assets (generated later)
+README.md
+FIGMA_SETUP.md
+```
+
+## Running the HTML preview locally
+
+1. Clone/download this repo.
+2. Open any file from `html/` directly in a browser (files already link to the CSS bundle).
+3. For live reload, run a static server (e.g., `npx serve html`). All templates are mobile-first but include tablet/desktop breakpoints.
+
+## Component mapping (Figma → CSS class)
+
+| Figma component | HTML/CSS hook |
+| --- | --- |
+| `bf/nav/bottom` | `.bf-nav`, `.bf-nav__item`, modifier `--active`, `.bf-nav__badge` |
+| `bf/header/global` | `.bf-header`, modifier `.bf-header--solid`, `.bf-header__icon-btn` |
+| `bf/card/product` | `.bf-card`, modifiers `.bf-card--joined`, `.bf-card--sold`, `.bf-card--closed` |
+| `bf/progress` | `.bf-progress[data-value="*"]` + `.bf-progress--near`/`--complete` |
+| `bf/button/*` | `.bf-button`, modifiers `--primary`, `--secondary`, `--ghost`, `--loading`, `--disabled` |
+| `bf/icon/heart` | `.bf-icon-heart` + `aria-pressed` state |
+| `bf/skeleton/card` | `.bf-skeleton` |
+| `bf/modal/*` | `.bf-modal__backdrop`, `.bf-modal`, `.bf-modal__header`, `.bf-modal__close` |
+| `bf/carousel/hero` | `.bf-carousel`, `.bf-carousel__item`, `.bf-carousel__dot` |
+
+See `build/component-inventory.csv` for the full set with variant notes and page references.
+
+## Fonts & assets
+
+- Font: `Inter` via Google Fonts (no local install required, SIL Open Font License).
+- Icons: Thin-outline custom SVGs under `figma-export/icons/` (CC0 from this repo).
+- Photography: Unsplash placeholders already have `?auto=format` parameters for fast loading; replace with production CDN before launch.
+
+## Prototype guidance
+
+Key flows are documented in `FIGMA_SETUP.md`:
+- Flow A: Home card → Product → Join CTA → Payment modal → Join success.
+- Wishlist toggles and snackbar interactions.
+- Categories sort/filter variant swaps.
+- My Groups real-time progress simulation.
+- Notifications deep-link frames.
+
+When recreating inside Figma, enable Inspect so devs can pull CSS snippets that match this code bundle.
