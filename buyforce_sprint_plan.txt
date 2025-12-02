@@ -1,0 +1,98 @@
+BuyForce MVP – תוכנית ספרינטים דו-שבועית (להעלאה ל-Monday)
+פורמט שורה: [Task ID] | [תחום] | [משימה] | [תוצר סופי (DoD)] | [תלויות]
+
+Sprint 0 – 01.12.2025-14.12.2025 | הקמת תשתיות ותיאום
+S0-T01 | Product Ops | אישור PRD + מסמך החלטות פתוחות | PRD חתום + רשימת פערים במאנדי | -
+S0-T02 | Strategy | הגדרת KPI/OKR מדידים לאביב MVP | לוח KPI במאנדי עם יעד לכל מדד | S0-T01
+S0-T03 | Architecture | דיאגרמת ארכיטקטורה על + הקצאת דומיינים | קובץ C4 + מצגת סקירה לכל הצוות | S0-T01
+S0-T04 | DevOps | הקמת מונורפו (Next.js, RN, Nest.js) + ברנצ'ינג | ריפו ראשי + תבנית PR + הנחיות code owners | S0-T03
+S0-T05 | Infrastructure | הקמת סביבות Local/Staging/Prod + ניהול סודות | Terraform/Ansible בסיסי + vault מאובטח | S0-T04
+S0-T06 | CI/CD | GitHub Actions/Bitrise פייפליין לבילדים בסיסיים | תהליך בדיקות + דיליוור לסטייג'ינג אוטומטי | S0-T04
+S0-T07 | Design System | בחירת טוקני צבע/טיפוגרפיה + קובץ Figma ראשי | Design kit משותף Web/Mobile | S0-T01
+S0-T08 | Integrations | פתיחת חשבונות Tranzilla, Firebase, SendGrid, FCM | Sandbox תקין + מפתחות שמורים | S0-T05
+S0-T09 | Data | ERD ראשוני + תיעוד סכמות בטבלת Notion/DBML | קובץ dbdiagram + רשימת מיגרציות MVP | S0-T03
+S0-T10 | Analytics | תכנית אינסטרומנטציה (Mixpanel/GA4) + מילון אירועים | מסמך אירועים + שדות חובה | S0-T02
+
+Sprint 1 – 15.12.2025-28.12.2025 | יסודות זהות משתמש ו-Shell אפליקטיבי
+S1-T01 | Backend Auth | מודול Auth ב-Nest (Firebase JWT Guards) | Endpoints /auth/login,/register פעילים | S0-T08
+S1-T02 | Mobile/Web Auth | מסכי הרשמה/התחברות + אימות בסיסי | Flow מלא Web+RN עם ולידציות | S1-T01
+S1-T03 | Onboarding UX | קרוסלת 3 שקופיות + קופי להסברת מודל 1₪ | מסכי Onboarding באפליקציות | S0-T07
+S1-T04 | Navigation | Header עליון + Bottom Nav (Home/Cat/MyGroups/Notif/Profile) | Shell רץ ב-Next ו-RN | S0-T04
+S1-T05 | User Profile API | GET/PATCH /user/me + user_settings | סכמת DB (users,user_settings) בפרוד | S0-T09
+S1-T06 | Profile UI | מסך פרופיל בסיסי (שם, אימייל, שפה) | עריכת פרטים מסנכרנת מול API | S1-T05
+S1-T07 | Forgot Password | טריגר reset (Firebase + אימייל) | תרחיש "שכחתי סיסמה" נבדק end-to-end | S0-T08
+S1-T08 | Notification Pref Schema | עמודת push/email + toggle ב-UI | טבלת user_settings מעודכנת + API | S1-T05
+S1-T09 | QA Auth | סט בדיקות (Cypress/Detox) לזרימות auth | דו"ח מעבר בדיקות אוטומטי | S1-T02
+S1-T10 | Telemetry Auth | אירועי onboarding_view/login_success וכו' | משודרים ל-Mixpanel עם user_id | S0-T10
+
+Sprint 2 – 29.12.2025-11.01.2026 | קטלוג, דף בית וחיפוש ראשוני
+S2-T01 | Categories DB | יצירת טבלת categories + seed ראשוני | מיגרציה רצה בסטייג'ינג | S0-T09
+S2-T02 | Categories API | /categories + /products?category= | מגיב בפחות מ-300ms עם קאש Redis | S2-T01
+S2-T03 | Category Grid UI | גריד קטגוריות (web & mobile) עם אייקונים | לחיצה מנווטת לפיד קטגוריה | S2-T02
+S2-T04 | Homepage APIs | /groups/near-goal, /groups/top-discounts, /groups/new | מחזירים מידע דמה מה-DB | S0-T09
+S2-T05 | Homepage UI | מקטעים דינמיים + שלד טעינה אינסופי | משוך נתונים מה-APIs | S2-T04
+S2-T06 | Product Page API | /product/:id כולל images/specs/active group | נתמך ב-SSR Next | S0-T09
+S2-T07 | Product Page UI | קרוסלה, מחירים, progress bar, CTA להצטרפות | כתוב ב-Web + קומפוננטה RN | S2-T06
+S2-T08 | Wishlist Backend | טבלת wishlist + /wishlist CRUD | בדיקות יחידה לשמירת פריטים | S0-T09
+S2-T09 | Wishlist UI | אייקון ♥ על כרטיס + מסך Wishlist בסיסי | מצב נותר בסשן | S2-T08
+S2-T10 | Search Overlay v1 | קומפוננטה חיפוש במסך מלא + אוטוקומפליט דמה | התחברות ל-/search/suggestions | S0-T09
+
+Sprint 3 – 12.01.2026-25.01.2026 | ליבת קבוצות וזרימת הצטרפות
+S3-T01 | Group Entity | מיגרציית groups + סטטוסים מלאים | טבלה בפרוד + אינדקסים | S0-T09
+S3-T02 | Membership Table | group_memberships עם constraints | Unique (group,user) נאכף | S3-T01
+S3-T03 | Group Service | לוגיקת יצירה/עדכון סטטוסים (OPEN/LOCKED וכו') | בדיקות יחידה מעבירות | S3-T01
+S3-T04 | Join API Skeleton | /group/join בלי תשלום (mock) | מחזיר PREAUTH_HELD דמה | S3-T02
+S3-T05 | Join UI Flow | כפתור "הצטרף בשקל" + מודל אישור | מצב "Joined✔" בכרטיס | S3-T04
+S3-T06 | Group Detail Page | הצגת יעד, טיימר, ספק, סטטוס | מחובר ל-/group/:id | S3-T03
+S3-T07 | My Groups List | טאבים (Active/Closing Soon/Charged/Refunded/Failed) | מבוסס /user/groups | S3-T02
+S3-T08 | Scheduler Service | cron/bull לעדכון DEADLINE+LOCK | משימה רצה בסטייג'ינג | S3-T03
+S3-T09 | Edge Cases | טיפול כפילות הצטרפות, קבוצה מלאה, תפוגה | בדיקות אינטגרציה מכסות | S3-T04
+S3-T10 | UX Messaging | מצבי שגיאה (decline, waitlist future) + קופי | משתלבים ב-Web+RN | S3-T05
+
+Sprint 4 – 26.01.2026-08.02.2026 | תשלומים, נוטיפיקציות ואוטומציות
+S4-T01 | Tranzilla Preauth | אינטגרציית sandbox + שמירת provider_ref | קריאת /payment/preauth עובדת | S0-T08
+S4-T02 | Charge Engine | queue (BullMQ) ל-/payments/charge-group | ג'ובים מתעדים סטטוסים | S3-T08
+S4-T03 | Refund Engine | /payments/refund-group + אוטומציה ל-FAILED | בדיקת כשל->החזר | S4-T01
+S4-T04 | Transactions Table | מיגרציית transactions + idempotency | Unique על idempotency_key | S0-T09
+S4-T05 | Payment Errors UI | הצגת שגיאות בכרטיס + פרופיל | חוזר ניסיון תשלום | S4-T01
+S4-T06 | Notification Module | יצירת אירועים + טבלת notifications | hooks מקבלים GROUP_70 וכו' | S3-T03
+S4-T07 | Push Integration | שמירת device tokens + שליחת FCM | טוקן מזוהה לכל משתמש | S1-T08
+S4-T08 | Email Templates | SendGrid טמפלטים (הצטרפות/הצלחה/כישלון) | מאושר ע״י Owner | S0-T08
+S4-T09 | Notification Center UI | מסך נוטיפיקציות עם פילטרים | משיכת /notifications | S4-T06
+S4-T10 | Payment Settings UI | הוספת אמצעי תשלום (token ref) | קשור ל-/user/payment-methods | S4-T01
+
+Sprint 5 – 09.02.2026-22.02.2026 | חוויית משתמש מתקדמת ו-Search מלא
+S5-T01 | My Groups Depth | טבלאות Active/Closing/Charged/Refunded/Failed עם פילטרים | נתונים real-time (polling) | S3-T07
+S5-T02 | Cancel Participation | /group/cancel + החזר 1₪ לפני LOCKED | UI מודאל + עדכון progress | S4-T03
+S5-T03 | Wishlist Full Page | גריד מלא עם לינקים עמוקים | מצבי ריק/מוצר לא זמין | S2-T09
+S5-T04 | Search Results | תוצאות עם מיון + פילטרי מחיר/מותג (stub) | מחובּר ל-/search/results | S2-T10
+S5-T05 | Category Sort/Filter | "Closest to Goal", "Highest Discount", "Newest" | UI dropdown + refresh | S2-T03
+S5-T06 | Group Detail Live | עדכון פס התקדמות/טיימר ללא ריענון (poll 30s) | fallback ל-websocket עתידי | S3-T06
+S5-T07 | Notification Pref UI | מתגים לפרומושן/Push/Email | מכבד user_settings | S1-T08
+S5-T08 | Profile Payments UX | טיפול בכרטיס שפג + הודעות הנחיה | מייחס PAYMENT_FAILED | S4-T05
+S5-T09 | Analytics Events | הטמעת event tracking לכל הזרימות | אימות ב-Mixpanel Dashboard | S0-T10
+S5-T10 | Localization | מנגנון i18n (EN/HE) + מחרוזות עיקריות | קובצי תרגום משותפים | S1-T03
+
+Sprint 6 – 23.02.2026-08.03.2026 | מובייל פריטי, ביצועים ואבטחה
+S6-T01 | RN Homepage/Categories | שוויון יכולות מול Web | רינדור מקטעים דינמיים | S2-T05
+S6-T02 | RN Product/MyGroups | מסכי מוצר וקבוצות ב-RN | תמיכה בניווט עמוק | S3-T07
+S6-T03 | Push Deep Links | פתיחת נוטיפיקציה -> מסך רלוונטי | בדיקות iOS/Android | S4-T07
+S6-T04 | Offline/Loading States | Skeletons + מצב ללא רשת במובייל | UX מתועד | S6-T01
+S6-T05 | Performance | קאשינג Redis ל-home/search + Lighthouse>80 | דוחות ביצועים מצורפים | S2-T04
+S6-T06 | QA Automation | הרחבת Cypress + Detox לזרימות E2E | רצות ב-CI nightly | S1-T09
+S6-T07 | Security Hardening | rate limiting, helmet, audit logs אדמין | בדיקת חדירה בסיסית | S4-T04
+S6-T08 | Observability | לוגים JSON + דשבורד Grafana (latency, errors) | התרעות 5xx > SLA | S0-T05
+S6-T09 | Load Test | בדיקת עומס להצטרפות/תשלום (k6) | דו"ח עם bottlenecks | S4-T02
+S6-T10 | Beta Release | הפצה פנימית (TestFlight/Internal Track) + טופס פידבק | רשימת תקלות מסודרת | S6-T03
+
+Sprint 7 – 09.03.2026-22.03.2026 | קונסולת אדמין, אנליטיקה והשקה
+S7-T01 | Admin Auth | RBAC + כניסה מאובטחת לאדמין | /admin מוגן תפקידים | S1-T01
+S7-T02 | Admin Product CRUD | ניהול מוצרים (תמונות, קטגוריה, מחירים) | תצוגה מבוססת React Admin | S2-T06
+S7-T03 | Admin Group Ops | יצירה/סגירה/עריכה + Force Charge/Refund | לוג Audit לכל פעולה | S3-T03
+S7-T04 | Supplier Management | מודול ספקים בסיסי + שיוך מוצר | טבלת suppliers מיושמת | S7-T02
+S7-T05 | Analytics Dashboards | Mixpanel/Looker: Funnel, Lifecycle, Payments | מוצג להנהלה | S5-T09
+S7-T06 | Notification Monitoring | לוח תקלות + רייט-לימיט פר משתמש | Grafana Panel יעודי | S4-T06
+S7-T07 | Finance Reconciliation | דוח טרנזקציות יומי + התאמת Tranzilla | תהליך ידני מתועד | S4-T04
+S7-T08 | Launch Runbook | פלייבוק תקלות + Owner לכל רכיב | מאושר ע"י Owner + Support | S6-T08
+S7-T09 | Store Submission | העלאת גרסאות iOS/Android (TestFlight/Production) | סטטוס "Ready for Sale" | S6-T10
+S7-T10 | Production Monitoring | התרעות PagerDuty + on-call rotation | מופעל לפני גו-לייב | S6-T08
